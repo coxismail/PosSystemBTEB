@@ -1,0 +1,106 @@
+﻿body, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+main::-webkit-scrollbar, #sidebarMenu::-webkit-scrollbar {
+    width: 2px;
+}
+
+.table > tbody > tr > td {
+    padding: 0.25rem;
+}
+
+table {
+    width: 100%;
+}
+
+.menu-items, .child-menu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+/*.child-menu{
+height:0px;
+}
+.child-menu>.nav-item{
+    display:none;
+}*/
+.menu-item {
+    border-left: 1px solid;
+    margin-bottom: 15px;
+}
+
+    .menu-item > span {
+        font-weight: 600;
+        display: block;
+        color: lightgray;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid;
+        border-top: 2px dotted;
+        text-transform: uppercase;
+    }
+
+        .menu-item > span:hover {
+            font-weight: bold;
+        }
+
+.nav-link, .nav-link:hover {
+    color: white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.nav-item {
+    background-color: #faebd726;
+}
+
+    .nav-item :hover {
+        border-bottom: 0.5px dotted white;
+    }
+
+
+/*    side bar */
+.sidebar-menu {
+    position: fixed;
+    height: 100%;
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.control-label {
+    font-style: italic;
+    color: black;
+}
+
+.form-control {
+    height: calc(1.5em + 0.5rem + 0px);
+    padding: 0px 0.75rem;
+    font-size: 15px;
+    color: #495057;
+    border-radius: 0px;
+}
+
+.card-header {
+    padding: 3px 15px;
+    background-color: #ffffff69;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 0px;
+}
+
+@keyframes slideDown {
+    0% {
+        height: 5px;
+    }
+
+    100% {
+        height: auto;
+    }
+}

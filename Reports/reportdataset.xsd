@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportdataset" targetNamespace="http://tempuri.org/reportdataset.xsd" xmlns:mstns="http://tempuri.org/reportdataset.xsd" xmlns="http://tempuri.org/reportdataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="reportdataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="reportdataset" msprop:Generator_UserDSName="reportdataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ssps" msprop:Generator_TableClassName="sspsDataTable" msprop:Generator_TableVarName="tablessps" msprop:Generator_RowChangedName="sspsRowChanged" msprop:Generator_TablePropName="ssps" msprop:Generator_RowDeletingName="sspsRowDeleting" msprop:Generator_RowChangingName="sspsRowChanging" msprop:Generator_RowEvHandlerName="sspsRowChangeEventHandler" msprop:Generator_RowDeletedName="sspsRowDeleted" msprop:Generator_RowClassName="sspsRow" msprop:Generator_UserTableName="ssps" msprop:Generator_RowEvArgName="sspsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="party" msprop:Generator_TableClassName="partyDataTable" msprop:Generator_TableVarName="tableparty" msprop:Generator_RowChangedName="partyRowChanged" msprop:Generator_TablePropName="party" msprop:Generator_RowDeletingName="partyRowDeleting" msprop:Generator_RowChangingName="partyRowChanging" msprop:Generator_RowEvHandlerName="partyRowChangeEventHandler" msprop:Generator_RowDeletedName="partyRowDeleted" msprop:Generator_RowClassName="partyRow" msprop:Generator_UserTableName="party" msprop:Generator_RowEvArgName="partyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

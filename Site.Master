@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PosSystem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Simple PoS System</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/chosen.css" rel="stylesheet" />
+    <link href="Assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+
+        <nav class="d-flex justify-content-between align-items-center fixed-top py-1" style="background-color: black; color: white; z-index: 2;">
+            <div style="width: 265px; border-right: 1px solid white;" class="text-center">
+                <h4 class="pt-1">&raquo;POS&laquo;</h4>
+            </div>
+            <div class="text-right d-flex pr-4">
+                <asp:Label ID="userNameLabel" runat="server" Text=""></asp:Label>
+                &nbsp; &nbsp;&nbsp;
+                 <asp:LoginStatus runat="server" CssClass="fa fa-sign-out" LogoutAction="Redirect" LogoutText="" LogoutPageUrl="~/Account/Login" OnLoggingOut="Unnamed_LoggingOut" />
+            </div>
+        </nav>
+
+        <asp:LoginView runat="server">
+            <LoggedInTemplate>
+                <nav id="sidebarMenu" class="sidebar sidebar-menu" style="width: 265px; overflow-y:scroll; position: fixed; left: 0px; height: calc(100vh - 50px); bottom: 0px; background-color: black; color: white; z-index: 2;">
+
+                    <ul class="menu-items">
+                        <li class="menu-item"><a class="nav-link" href="/"><i class="fa fa-home"></i> Home </a></li>
+
+                        <li class="menu-item"><span> <i class="fa fa-signal"></i> Purchase</span>
+                            <ul class="child-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Pages/Purchase"> <i class="fa fa-paper-plane"></i> Purchase Transaction</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Pages/PurchaseReport"> <i class="fa fa-registered"></i> Purchase Report</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><span> <i class="fa fa-sign-out"></i> Sales</span>
+                            <ul class="child-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Pages/Sales"><i class="fa fa-scissors"></i> Sales Transaaction</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Pages/SalesReport"> <i class="fa fa-reddit"></i> Sales Report</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"> <span> <i class="fa fa-newspaper-o"></i> Inventory</span>
+                            <ul class="child-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/inventory"><i class="fa fa-subway"></i> Stock Report </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Pages/Transfer"><i class="fa fa-arrows"></i> Stock Transfer</a>
+                                </li>
+                            </ul>
+                        </li>
+                                                <li class="menu-item"><span><i class="fa fa-cog"></i> Basic Setup</span>
+                        <ul class="child-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Pages/Stores"> <i class="fa fa-wheelchair-alt"></i> Stores / Wharehouse </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Pages/Categories"><i class="fa fa-object-group"></i> Categories / Groups </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Pages/Brands"><i class="fa fa-themeisle"></i> Brands / Company </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Pages/Products"><i class="fa fa-suitcase"></i> Products / Items </a>
+                            </li>
+                        </ul>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+            </LoggedInTemplate>
+        </asp:LoginView>
+
+        <main role="main" class="" style="width: calc(100vw - 270px); margin-left:270px; margin-top:55px; background-color: whitesmoke; overflow-y: scroll; height: calc(100vh - 60px);">
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+    </form>
+    <script src="/Scripts/chosen.jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".chosen-select").chosen({
+                width: "100%"
+            });
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            if (prm != null) {
+                prm.add_endRequest(function (sender, e) {
+                    if (sender._postBackSettings.panelsToUpdate != null) {
+
+                        $(".chosen-select").chosen({
+                            width: "100%"
+                        });
+
+                    }
+                });
+            };
+        });
+
+        //$(".chosen-select.multiple").attr("multiple", "multiple");
+        //$(".chosen-select").chosen({
+        //    width:"100%"
+        //});
+        $(".showtheModel").modal('show');
+    </script>
+</body>
+</html>
